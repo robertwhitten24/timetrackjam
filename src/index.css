@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #902c3c; /* Brand burgundy */
+  --primary-light: #a33344;
+  --primary-dark: #7d2634;
+  --accent: #902c3c;
+  --accent-light: #a33344;
+  --timer-bg: #7d2634; /* Darker brand burgundy for timer */
+  --timer-text: #ffffff; /* White */
+}
+
+@layer base {
+  html {
+    @apply text-base;
+  }
+  
+  @screen sm {
+    html {
+      @apply text-base;
+    }
+  }
+  
+  @screen lg {
+    html {
+      @apply text-base;
+    }
+  }
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
+
+/* Modern form inputs */
+input, select, textarea {
+  @apply transition-all duration-200;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  @apply block w-full rounded-lg border-gray-200 bg-white px-3 py-2 text-sm focus:border-primary focus:ring-primary sm:px-4 sm:py-3;
+}
+
+/* Form field containers */
+.form-field {
+  @apply bg-white rounded-lg border border-gray-100 p-3 transition-all duration-200 hover:shadow-md sm:p-4;
+}
+
+.form-field-header {
+  @apply flex items-center space-x-2 mb-2 sm:space-x-3 sm:mb-3;
+}
+
+.form-field-icon {
+  @apply w-4 h-4 text-primary sm:w-5 sm:h-5;
+}
+
+.form-field-title {
+  @apply text-sm font-medium text-gray-700;
+}
+
+/* Modern buttons */
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg transition-colors duration-200 text-sm font-medium px-4 py-2;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+}
+
+.btn-accent {
+  @apply bg-accent text-white hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+}
+
+/* Timer specific styles */
+.timer-display {
+  @apply bg-timer-bg text-timer-text rounded-xl sm:rounded-2xl p-6 sm:p-12 shadow-lg;
+  background-image: linear-gradient(135deg, var(--timer-bg) 0%, #7d2634 100%);
+}
+
+.timer-digits {
+  @apply font-mono text-4xl sm:text-7xl font-bold tracking-wider;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timer-container {
+  @apply bg-white rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden border border-gray-100;
+}
+
+/* Modern toggle switch */
+.toggle-switch {
+  @apply relative inline-flex h-6 w-12 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 sm:h-7 sm:w-14;
+}
+
+.toggle-switch-handle {
+  @apply pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out sm:h-6 sm:w-6;
+}
+
+/* Table styles */
+table {
+  @apply w-full text-left text-sm;
+}
+
+th {
+  @apply bg-gray-50 px-3 py-2 font-medium text-gray-600 sm:px-4 sm:py-3;
+}
+
+td {
+  @apply border-t border-gray-100 px-3 py-2 text-gray-600 sm:px-4 sm:py-3;
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded bg-primary/30 hover:bg-primary/40;
+}
+
+/* Responsive text sizes */
+.text-xs {
+  @apply text-[0.75rem] sm:text-[0.8125rem];
+}
+
+.text-sm {
+  @apply text-[0.8125rem] sm:text-[0.875rem];
+}
+
+.text-base {
+  @apply text-[0.875rem] sm:text-[1rem];
+}
+
+.text-lg {
+  @apply text-[1rem] sm:text-[1.125rem];
+}
+
+.text-xl {
+  @apply text-[1.125rem] sm:text-[1.25rem];
+}
+
+.text-2xl {
+  @apply text-[1.25rem] sm:text-[1.5rem];
+}
+
+/* Custom scrollbar for dark sidebar */
+.dark-scrollbar::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.dark-scrollbar::-webkit-scrollbar-track {
+  @apply bg-[#902c3c];
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb {
+  @apply rounded bg-white/10 hover:bg-white/20;
+}
